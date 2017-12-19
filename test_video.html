@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Test Video</title>
+
+   <link rel="stylesheet"
+         href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+         rel="stylesheet">
+   <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
+         rel="stylesheet">
+
+   <style>
+      html {
+         height: 100%;
+      }
+
+      body {
+         font-family: 'Open Sans', sans-serif;
+         background-color: #F2F2F2;
+         height: 100%;
+         font-size: 14px;
+      }
+
+      .fas {
+         font-size: 32px;
+         cursor: pointer;
+      }
+
+      video {
+         display: block;
+      }
+
+      [video-container] {
+         overflow: hidden;
+      }
+
+      [title] {
+         margin-top: 16px;
+         font-weight: bold;
+      }
+
+      [content] {
+         font-size: 13px;
+         margin-top: 16px;
+      }
+
+      [card] {
+         width: 300px;
+         background-color: white;
+         padding: 15px;
+         border-radius: 5px;
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      }
+
+      [carousel] {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100%;
+      }
+
+      [carousel]>div+div {
+         margin-left: 25px;
+      }
+   </style>
+</head>
+
+<body>
+   <div carousel>
+      <div>
+         <i class="fas fa-caret-left"></i>
+      </div>
+      <div card>
+         <div video-container>
+            <video id="videoElement1"
+                   width="300">
+               <source src="test_video.mp4"
+                       type="video/mp4"> Your browser does not support HTML5 video.
+            </video>
+         </div>
+         <div title>How To</div>
+         <div content>Nunc volutpat nec libero at ornare. Donec sagittis arcu in velit feugiat consectetur. Morbi id rutrum leo.</div>
+      </div>
+      <div card>
+         <div video-container>
+            <video id="videoElement2"
+                   width="300">
+               <source src="test_video.mp4"
+                       type="video/mp4"> Your browser does not support HTML5 video.
+            </video>
+         </div>
+         <div title>How To</div>
+         <div content>Nunc volutpat nec libero at ornare. Donec sagittis arcu in velit feugiat consectetur. Morbi id rutrum leo.</div>
+      </div>
+      <div card>
+         <div video-container>
+            <video id="videoElement3"
+                   width="300">
+               <source src="test_video.mp4"
+                       type="video/mp4"> Your browser does not support HTML5 video.
+            </video>
+         </div>
+         <div title>How To</div>
+         <div content>Nunc volutpat nec libero at ornare. Donec sagittis arcu in velit feugiat consectetur. Morbi id rutrum leo.</div>
+      </div>
+      <div>
+         <i class="fas fa-caret-right"></i>
+      </div>
+   </div>
+
+   <script type="text/javascript">
+      (function (window) {
+         const setupVideo = function () {
+            let v = document.getElementById('videoElement1');
+            v.addEventListener('mouseover', function () { this.controls = true; }, false);
+            v.addEventListener('mouseout', function () { this.controls = false; }, false);
+            v = document.getElementById('videoElement2');
+            v.addEventListener('mouseover', function () { this.controls = true; }, false);
+            v.addEventListener('mouseout', function () { this.controls = false; }, false);
+            v = document.getElementById('videoElement3');
+            v.addEventListener('mouseover', function () { this.controls = true; }, false);
+            v.addEventListener('mouseout', function () { this.controls = false; }, false);
+         }
+
+         window.addEventListener('load', setupVideo, false);
+      })(window);
+   </script>
+</body>
+
+</html>
